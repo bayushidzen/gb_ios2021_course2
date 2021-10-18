@@ -12,20 +12,35 @@
         <!--Friends-->
         <scene sceneID="Lkl-FN-8PJ">
             <objects>
-                <tableViewController id="5Ja-Ql-3Et" sceneMemberID="viewController">
+                <tableViewController id="5Ja-Ql-3Et" customClass="FriendsController" customModule="Lesson2_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gi4-zv-9Mm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YKH-hp-OXT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCell" id="YKH-hp-OXT" customClass="FriendsCell" customModule="Lesson2_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YKH-hp-OXT" id="KhU-nR-3xL">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJt-BZ-fHv" customClass="FriendName">
+                                            <rect key="frame" x="125" y="10" width="164" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnH-oV-u5m" customClass="FriendsAvatar">
+                                            <rect key="frame" x="20" y="5" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="FriendName" destination="HJt-BZ-fHv" id="8Qj-wf-Xiy"/>
+                                    <outlet property="FriendsAvatar" destination="mnH-oV-u5m" id="2mC-BD-Szy"/>
                                     <segue destination="aQe-32-ZQj" kind="show" id="odl-Id-baT"/>
                                 </connections>
                             </tableViewCell>
@@ -41,7 +56,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyv-MI-DjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="-188"/>
+            <point key="canvasLocation" x="2488.4057971014495" y="-188.16964285714286"/>
         </scene>
         <!--Friends-->
         <scene sceneID="vOG-kh-jvV">
@@ -64,7 +79,7 @@
         <scene sceneID="DPk-Fj-gFM">
             <objects>
                 <navigationController id="XqZ-qZ-b7f" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCH-e4-1oj">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="VCH-e4-1oj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -250,7 +265,7 @@
         <scene sceneID="dkW-90-Joc">
             <objects>
                 <navigationController id="bmL-4w-zrx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="efF-hA-Jtv"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="person.3.fill" catalog="system" id="efF-hA-Jtv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dfF-7P-Guk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -315,6 +330,7 @@
     </scenes>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
